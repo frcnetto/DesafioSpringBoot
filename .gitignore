@@ -1,5 +1,6 @@
 /target/
 !.mvn/wrapper/maven-wrapper.jar
+.pdf
 
 ### MacOS ###
 .DS_Store
@@ -30,3 +31,7 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+\.vscode/
+
+*.pdf
