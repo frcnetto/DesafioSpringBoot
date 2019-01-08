@@ -1,10 +1,5 @@
 package br.com.frcnetto.desafiospringboot.desafiospringboot.service;
 
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
@@ -18,7 +13,7 @@ public class FileServiceImpl implements FileService {
   private PDFServiceImpl pdfService;
 
   @Override
-	public int save( MultipartFile file, Object ... hashParams ) {
+	public int save( MultipartFile file, Object... hashParams ) {
     
     try {
 
@@ -47,15 +42,6 @@ public class FileServiceImpl implements FileService {
       hash += obj.hashCode();
 
     return hash;
-  }
-
-  @Override
-  public void persist(String relativePath, MultipartFile file) throws IOException {
-    
-    byte[] bytes = file.getBytes();
-    Path path    = Paths.get( relativePath );
-    Files.write(path, bytes);
-
   }
   
 }
